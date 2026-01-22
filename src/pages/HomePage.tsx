@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { CreaTVLogo } from "@/components/CreaTVLogo";
 import { DocsHeader } from "@/components/docs/DocsHeader";
 import { DocsFooter } from "@/components/docs/DocsFooter";
-import { ArrowRight, Play, BarChart3, Users, Palette } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { MdVideoLibrary } from "react-icons/md";
+import { GiTakeMyMoney, GiAllSeeingEye, GiCircuitry } from "react-icons/gi";
 
 const HomePage = () => {
   return (
@@ -56,7 +58,7 @@ const HomePage = () => {
                 to="/learn/studio/content"
                 className="group p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors"
               >
-                <Play className="h-8 w-8 text-primary mb-4" />
+                <MdVideoLibrary className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   Content Management
                 </h3>
@@ -69,7 +71,7 @@ const HomePage = () => {
                 to="/learn/studio/analytics"
                 className="group p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors"
               >
-                <BarChart3 className="h-8 w-8 text-primary mb-4" />
+                <GiAllSeeingEye className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   Analytics
                 </h3>
@@ -82,7 +84,7 @@ const HomePage = () => {
                 to="/learn/studio/earn"
                 className="group p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors"
               >
-                <Users className="h-8 w-8 text-primary mb-4" />
+                <GiTakeMyMoney className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   Monetization
                 </h3>
@@ -95,7 +97,7 @@ const HomePage = () => {
                 to="/learn/studio/customization"
                 className="group p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors"
               >
-                <Palette className="h-8 w-8 text-primary mb-4" />
+                <GiCircuitry className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   Customization
                 </h3>
