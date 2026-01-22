@@ -47,7 +47,7 @@ export const DocsHeader = () => {
             <div className="flex items-center gap-4">
               <CreaTVLogo size="sm" linkTo="/" />
               <div className="flex flex-col justify-center items-center">
-                <span className="text-xs font-bold text-muted-foreground hidden sm:inline creatv-documentation-top mb-[-3px]">Docs</span>
+                <span className="text-xs font-bold text-muted-foreground hidden sm:inline creatv-documentation-top">Docs</span>
                 <GiSpellBook className="h-6 w-6 text-yellow-300" />
               </div>
             </div>
