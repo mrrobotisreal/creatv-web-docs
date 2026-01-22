@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CreaTV Documentation Design System - Dark Mode First */
+
+@layer base {
+  :root {
+    /* Light mode (secondary) */
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 187 85% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 187 85% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 187 85% 43%;
+
+    --radius: 0.5rem;
+
+    /* CreaTV Brand Gradients */
+    --creatv-crea-start: 265 83% 57%;
+    --creatv-crea-end: 203 92% 75%;
+    --creatv-tv-start: 24 96% 55%;
+    --creatv-tv-end: 63 100% 73%;
+    --creatv-studio-start: 145 100% 69%;
+    --creatv-studio-end: 145 88% 33%;
+    --creatv-documentation-start: 323.14 100% 70%;
+    --creatv-documentation-end: 48.07 100% 67%;
+
+    /* Documentation specific */
+    --docs-sidebar: 220 20% 95%;
+    --docs-sidebar-hover: 220 15% 90%;
+    --docs-link: 187 85% 43%;
+    --docs-link-hover: 187 85% 35%;
+    --docs-code-bg: 220 20% 92%;
+    --docs-note-bg: 187 50% 95%;
+    --docs-note-border: 187 85% 43%;
+    --docs-pitfall-bg: 24 80% 95%;
+    --docs-pitfall-border: 24 96% 55%;
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 95%;
+    --sidebar-foreground: 220 20% 20%;
+    --sidebar-primary: 187 85% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 90%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 187 85% 43%;
+  }
+
+  .dark {
+    /* Dark mode (primary/default) */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 90%;
+
+    --card: 220 25% 11%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 220 25% 11%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 187 85% 53%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 220 20% 18%;
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 90%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 187 85% 53%;
+
+    /* Documentation specific - Dark */
+    --docs-sidebar: 220 25% 10%;
+    --docs-sidebar-hover: 220 20% 14%;
+    --docs-link: 187 85% 58%;
+    --docs-link-hover: 187 85% 68%;
+    --docs-code-bg: 220 25% 13%;
+    --docs-note-bg: 187 30% 12%;
+    --docs-note-border: 187 85% 53%;
+    --docs-pitfall-bg: 24 30% 12%;
+    --docs-pitfall-border: 24 96% 55%;
+
+    /* Sidebar - Dark */
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 187 85% 53%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 20% 16%;
+    --sidebar-ring: 187 85% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom fonts - assumed to exist */
+  @font-face {
+    font-family: 'Rubik Glitch';
+    src: local('Rubik Glitch');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Permanent Marker';
+    src: local('Permanent Marker');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Splash';
+    src: local('Splash');
+    font-display: swap;
+  }
+}
+
+@layer components {
+  /* CreaTV Brand Text */
+  .creatv-logo-text {
+    @apply flex items-center gap-0.5;
+  }
+
+  .creatv-crea {
+    font-family: 'Rubik Glitch', sans-serif;
+    background: linear-gradient(to right, hsl(var(--creatv-crea-start)), hsl(var(--creatv-crea-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .creatv-tv {
+    font-family: 'Rubik Glitch', sans-serif;
+    background: linear-gradient(to right, hsl(var(--creatv-tv-start)), hsl(var(--creatv-tv-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .creatv-studio {
+    font-family: 'Splash', cursive;
+    background: linear-gradient(to right, hsl(var(--creatv-studio-start)), hsl(var(--creatv-studio-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .creatv-documentation {
+    font-family: 'Permanent Marker', cursive;
+    background: linear-gradient(to right, hsl(var(--creatv-documentation-start)), hsl(var(--creatv-documentation-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .creatv-documentation-top {
+    font-family: 'Permanent Marker', cursive;
+    background: linear-gradient(to bottom, hsl(var(--creatv-documentation-start)), hsl(var(--creatv-documentation-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Documentation Links */
+  .docs-link {
+    @apply text-[hsl(var(--docs-link))] hover:text-[hsl(var(--docs-link-hover))] transition-colors;
+  }
+
+  /* Code blocks */
+  .docs-code-inline {
+    @apply bg-[hsl(var(--docs-code-bg))] px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .docs-code-block {
+    @apply bg-[hsl(var(--docs-code-bg))] p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+
+  /* Note callouts */
+  .docs-note {
+    @apply bg-[hsl(var(--docs-note-bg))] border-l-4 border-[hsl(var(--docs-note-border))] p-4 rounded-r-lg my-4;
+  }
+
+  .docs-pitfall {
+    @apply bg-[hsl(var(--docs-pitfall-bg))] border-l-4 border-[hsl(var(--docs-pitfall-border))] p-4 rounded-r-lg my-4;
+  }
+
+  /* Ad placeholders - fixed height to prevent shift */
+  .ad-banner-top {
+    @apply h-14 min-h-[56px] w-full;
+  }
+
+  .ad-sidebar {
+    @apply h-64 min-h-[256px] w-full;
+  }
+
+  /* Navigation active state */
+  .nav-link-active {
+    @apply text-primary font-medium;
+  }
+
+  /* Sidebar active state */
+  .sidebar-link-active {
+    @apply bg-[hsl(var(--docs-sidebar-hover))] text-primary border-l-2 border-primary;
+  }
+
+  /* You will learn box */
+  .docs-learn-box {
+    @apply bg-[hsl(var(--docs-code-bg))] rounded-lg p-5 my-6;
+  }
+
+  /* Mobile menu */
+  .mobile-menu-overlay {
+    @apply fixed inset-0 bg-background/80 backdrop-blur-sm z-40;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+/* Custom Font: Rubik Glitch */
+@font-face {
+  font-family: 'Rubik Glitch';
+  src: url('./assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-rubik-glitch {
+    font-family: 'Rubik Glitch', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+
+/* Custom Font: Permanent Marker */
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url('./assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-permanent-marker {
+    font-family: 'Permanent Marker', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+
+/* Custom Font: Splash */
+@font-face {
+  font-family: 'Splash';
+  src: url('./assets/fonts/Splash/Splash-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-splash {
+    font-family: 'Splash', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+
