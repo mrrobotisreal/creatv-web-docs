@@ -1,4 +1,5 @@
 import { DocsLayout } from "@/components/docs/DocsLayout";
+import { ScreenshotPlaceholder } from "@/components/common/ScreenshotPlaceholder";
 import { studioLearnSidebar } from "@/config/sidebarConfig";
 import {
   DocsBreadcrumb,
@@ -23,13 +24,6 @@ const tocItems: TocItem[] = [
   { id: "after-publish", title: "After you publish", level: 2 },
   { id: "troubleshooting", title: "Troubleshooting", level: 2 },
 ];
-
-const ScreenshotPlaceholder = ({ label }: { label: string }) => (
-  <div className="my-6 rounded-xl border border-border bg-secondary/30 p-6">
-    <p className="text-sm font-medium">Screenshot placeholder</p>
-    <p className="text-sm text-muted-foreground mt-1">{label}</p>
-  </div>
-);
 
 const StudioFirstVideoPage = () => {
   return (

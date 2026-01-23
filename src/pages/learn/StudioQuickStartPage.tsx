@@ -11,6 +11,7 @@ import {
   DocsInlineCode,
 } from "@/components/docs/DocsContent";
 import { TocItem } from "@/components/docs/OnThisPage";
+import { ScreenshotZoomCard, type ScreenshotZoomCardProps } from "@/components/common/ScreenshotZoomCard";
 
 const tocItems: TocItem[] = [
   { id: "overview", title: "Overview", level: 2 },
@@ -23,6 +24,24 @@ const tocItems: TocItem[] = [
   { id: "hashtags", title: "Hashtags (useful, not spammy)", level: 3 },
   { id: "description-screenshots", title: "Screenshot checklist", level: 3 },
   { id: "next-steps", title: "Next steps", level: 2 },
+];
+
+const screenshotItems: ScreenshotZoomCardProps[] = [
+  {
+    title: "Screenshot 1: Rendered & collapsed Description + Chapters on the watch page",
+    src: "https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Description1.webp",
+    alt: "Description 1",
+  },
+  {
+    title: "Screenshot 2: Rendered & expanded Description + Chapters on the watch page",
+    src: "https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Description2.webp",
+    alt: "Description 2",
+  },
+  {
+    title: "Screenshot 3: The HTTP link warning modal",
+    src: "https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Description3.webp",
+    alt: "Description 3",
+  },
 ];
 
 const StudioQuickStartPage = () => {
@@ -308,57 +327,29 @@ http://example.com`}
       </DocsList>
 
       <DocsHeading level={3} id="description-screenshots">
-        Screenshot checklist (optional, but makes this page 10x clearer)
+        The following example description text below will be rendered as seen in the screenshots below:
       </DocsHeading>
-      <p className="mb-4">
-        If you want to add visuals to this page, these are the highest-value shots. They let creators “get it” in two
-        seconds instead of reading a novel.
-      </p>
 
-      <div className="my-6 rounded-xl border border-border bg-muted/20 p-4">
-        <div className="font-semibold mb-2">Screenshot 1: Raw description text in Studio (before publish)</div>
-        <p className="text-sm text-muted-foreground mb-3">
-          Where: Studio → Create → Upload Video → <strong>Details</strong> step → <strong>Description</strong> field.
-        </p>
-        <p className="text-sm mb-3">
-          Paste something like this so you can capture a clean “before” screenshot:
-        </p>
-        <DocsCodeBlock language="text">
-{`Build a fast search bar (without melting your backend).
-Skip to 02:10 if you just want the fix.
+      <DocsCodeBlock language="text">
+{`📖🎄🎁 Our **SECOND** Graphic Novel is **OUT NOW**! Buy your copy ~~after~~ before the holidays today! 👉 https://book.ballenstudios.com
 
-- **Tools:** Go + Postgres + Redis
-- __Download__: https://docs.creatv.io
-- ~~Old approach:~~ cache everything forever (don’t do this)
+📌 Chapters:
+**5. "Long Lost Daughter"** -- __An unbelievable coincidence in London__ | 01:04
+**4. "Accidental Superstar"** -- __This person had a full blown "normal" career when something totally random made them an A list celebrity__ | 07:01
+**3. "1 in 1,000,000,000,000"** -- __The luckiest (or unluckiest) man alive__ | 17:34
+**2. "Didn't Age Well"** -- __In 1982, a man on a plane spotted something unusual on a Colorado mountain top__ | 25:49
+**1. "The Hitchhiker"** -- __A friendly gesture has devastating consequences__ | 33:37
 
-Chapters
-00:00 Intro
-02:10 The fix
-05:30 Final result
+#scary  #horrorstories  #mystery
 
-#creatv #tutorial #backend`}
-        </DocsCodeBlock>
-      </div>
 
-      <div className="my-6 rounded-xl border border-border bg-muted/20 p-4">
-        <div className="font-semibold mb-2">Screenshot 2: Rendered description + Chapters on the watch page</div>
-        <p className="text-sm text-muted-foreground mb-3">
-          Where: Open the published video → scroll to the description card → capture both the collapsed state (with{" "}
-          <strong>...more</strong>) and the expanded state (with <strong>Show less</strong>). Then capture the{" "}
-          <strong>Chapters</strong> section below.
-        </p>
-        <p className="text-sm mb-0">
-          Bonus shot: click a timestamp in the description to show that it jumps the player instantly.
-        </p>
-      </div>
+☠️__**CLICK ME!**__☠️
+http://insecure-website.com/i-will-steal-your-data`}
+      </DocsCodeBlock>
 
-      <div className="my-6 rounded-xl border border-border bg-muted/20 p-4">
-        <div className="font-semibold mb-2">Optional Screenshot 3: The HTTP link warning modal</div>
-        <p className="text-sm text-muted-foreground mb-0">
-          Add an <DocsInlineCode>http://</DocsInlineCode> link temporarily, click it in the description, and screenshot
-          the warning modal. Then remove the HTTP link afterward (don’t ship sketchy links).
-        </p>
-      </div>
+      {screenshotItems.map((screenshot) => (
+        <ScreenshotZoomCard key={screenshot.src} {...screenshot} />
+      ))}
 
       <DocsHeading id="next-steps">Next steps</DocsHeading>
       <DocsList>

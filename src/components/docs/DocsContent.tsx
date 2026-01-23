@@ -134,7 +134,7 @@ export const DocsLink = ({ href, children, external }: DocsLinkProps) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="docs-link underline underline-offset-2"
+        className="docs-link underline underline-offset-2 text-primary hover:text-purple-500"
       >
         {children}
       </a>
@@ -142,7 +142,7 @@ export const DocsLink = ({ href, children, external }: DocsLinkProps) => {
   }
 
   return (
-    <Link to={href} className="docs-link underline underline-offset-2">
+    <Link to={href} className="docs-link underline underline-offset-2 text-primary hover:text-purple-500">
       {children}
     </Link>
   );
