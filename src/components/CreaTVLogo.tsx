@@ -4,7 +4,7 @@ import studioLogo from "@/assets/studio_logo.png";
 
 interface CreaTVLogoProps {
   showStudio?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   linkTo?: string;
 }
 
@@ -13,6 +13,7 @@ export const CreaTVLogo = ({ showStudio = false, size = "md", linkTo = "/" }: Cr
     sm: { logo: "h-6 w-6", text: "text-base", studioText: "text-sm" },
     md: { logo: "h-8 w-8", text: "text-xl", studioText: "text-lg" },
     lg: { logo: "h-10 w-10", text: "text-2xl", studioText: "text-xl" },
+    xl: { logo: "h-14 w-14", text: "text-4xl", studioText: "text-3xl" },
   };
 
   const logoSrc = showStudio ? studioLogo : logo;

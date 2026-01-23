@@ -10,7 +10,7 @@ export const SearchBar = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <button className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-lg text-muted-foreground hover:bg-secondary/80 transition-colors w-full max-w-xs lg:max-w-sm">
+        <button className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-lg text-muted-foreground hover:bg-secondary/80 transition-colors w-full max-w-md lg:max-w-lg">
           <Search className="h-4 w-4" />
           <span className="text-sm flex-1 text-left">Search</span>
           <kbd className="hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground">

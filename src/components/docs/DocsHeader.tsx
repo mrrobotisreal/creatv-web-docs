@@ -32,19 +32,12 @@ export const DocsHeader = () => {
 
   return (
     <>
-      {/* Top ad banner */}
-      <div className="border-b border-border">
-        <div className="max-w-screen-2xl mx-auto px-4">
-          <AdPlaceholder type="banner" />
-        </div>
-      </div>
-
       {/* Main header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-        <div className="max-w-screen-2xl mx-auto px-4">
-          <div className="flex items-center justify-between h-14">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-4">
+          <div className="grid h-14 grid-cols-[auto,1fr,auto] items-center gap-3">
             {/* Logo */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <CreaTVLogo size="sm" linkTo="/" />
               <div className="flex flex-col justify-center items-center">
                 <span className="text-xs font-bold text-muted-foreground hidden sm:inline creatv-documentation-top">Docs</span>
@@ -53,54 +46,57 @@ export const DocsHeader = () => {
             </div>
 
             {/* Desktop Search - Center */}
-            <div className="hidden md:flex flex-1 justify-center max-w-md mx-4">
-              <SearchBar />
+            <div className="hidden md:flex w-full justify-center">
+              <div className="w-full max-w-xl">
+                <SearchBar />
+              </div>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
-              <NavDropdown label="Learn" items={learnItems} isActive={isLearnActive} />
-              <NavDropdown label="Reference" items={referenceItems} isActive={isReferenceActive} />
-              <Link
-                to="/community"
-                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  isCommunityActive ? "text-primary" : "text-foreground"
-                }`}
-              >
-                Community
-              </Link>
-              <Link
-                to="/blog"
-                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  isBlogActive ? "text-primary" : "text-foreground"
-                }`}
-              >
-                Blog
-              </Link>
-            </nav>
+            {/* Desktop Navigation + Right icons */}
+            <div className="flex items-center justify-end gap-2">
+              <nav className="hidden md:flex items-center gap-1">
+                <NavDropdown label="Learn" items={learnItems} isActive={isLearnActive} />
+                <NavDropdown label="Reference" items={referenceItems} isActive={isReferenceActive} />
+                <Link
+                  to="/community"
+                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                    isCommunityActive ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  Community
+                </Link>
+                <Link
+                  to="/blog"
+                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                    isBlogActive ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </nav>
 
-            {/* Right icons */}
-            <div className="flex items-center gap-1">
-              <ThemeToggle />
-              <LanguageSelector />
-              <a
-                href="https://www.winapps.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
+              <div className="flex items-center gap-1">
+                <ThemeToggle />
+                <LanguageSelector />
+                <a
+                  href="https://www.winapps.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
 
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </button>
+                {/* Mobile menu button */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+                  aria-label="Toggle menu"
+                >
+                  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -165,6 +161,13 @@ export const DocsHeader = () => {
           </div>
         )}
       </header>
+
+      {/* Top ad banner */}
+      <div className="border-b border-border bg-background">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-4">
+          <AdPlaceholder type="banner" />
+        </div>
+      </div>
     </>
   );
 };

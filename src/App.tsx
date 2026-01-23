@@ -3,26 +3,28 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import NotFound from "./pages/NotFound";
+import NotFound from "@/pages/NotFound";
 
 // Pages
-import HomePage from "./pages/HomePage";
-import CommunityPage from "./pages/CommunityPage";
-import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
-import APIComingSoon from "./pages/APIComingSoon";
+import HomePage from "@/pages/HomePage";
+import CommunityPage from "@/pages/CommunityPage";
+import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage";
+import APIComingSoon from "@/pages/APIComingSoon";
 
 // Learn Studio Pages
-import StudioOverview from "./pages/learn/StudioOverview";
-import DashboardPage from "./pages/learn/DashboardPage";
-import ContentPage from "./pages/learn/ContentPage";
-import AnalyticsPage from "./pages/learn/AnalyticsPage";
-import EarnPage from "./pages/learn/EarnPage";
-import CustomizationPage from "./pages/learn/CustomizationPage";
-import StudioCommunityPage from "./pages/learn/StudioCommunityPage";
+import StudioOverview from "@/pages/learn/StudioOverview";
+import DashboardPage from "@/pages/learn/DashboardPage";
+import ContentPage from "@/pages/learn/ContentPage";
+import AnalyticsPage from "@/pages/learn/AnalyticsPage";
+import EarnPage from "@/pages/learn/EarnPage";
+import CustomizationPage from "@/pages/learn/CustomizationPage";
+import StudioCommunityPage from "@/pages/learn/StudioCommunityPage";
+import StudioQuickStartPage from "@/pages/learn/StudioQuickStartPage";
+import StudioFirstVideoPage from "@/pages/learn/StudioFirstVideoPage";
 
 // Reference Studio Pages
-import StudioReference from "./pages/reference/StudioReference";
+import StudioReference from "@/pages/reference/StudioReference";
 
 const queryClient = new QueryClient();
 
@@ -38,8 +40,8 @@ const App = () => (
 
           {/* Learn Studio Routes */}
           <Route path="/learn/studio" element={<StudioOverview />} />
-          <Route path="/learn/studio/quick-start" element={<StudioOverview />} />
-          <Route path="/learn/studio/first-video" element={<StudioOverview />} />
+          <Route path="/learn/studio/quick-start" element={<StudioQuickStartPage />} />
+          <Route path="/learn/studio/first-video" element={<StudioFirstVideoPage />} />
           <Route path="/learn/studio/dashboard" element={<DashboardPage />} />
           <Route path="/learn/studio/dashboard/*" element={<DashboardPage />} />
           <Route path="/learn/studio/content" element={<ContentPage />} />

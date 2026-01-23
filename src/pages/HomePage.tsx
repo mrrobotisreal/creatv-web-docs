@@ -16,7 +16,7 @@ const HomePage = () => {
         <section className="py-16 md:py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
-              <CreaTVLogo size="lg" showStudio={false} />
+              <CreaTVLogo size="xl" showStudio={false} />
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
