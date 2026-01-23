@@ -15,7 +15,7 @@ import APIComingSoon from "@/pages/APIComingSoon";
 // Learn Studio Pages
 import StudioOverview from "@/pages/learn/StudioOverview";
 // import DashboardPage from "@/pages/learn/DashboardPage";
-import ContentPage from "@/pages/learn/ContentPage";
+// import ContentPage from "@/pages/learn/ContentPage";
 import AnalyticsPage from "@/pages/learn/AnalyticsPage";
 import EarnPage from "@/pages/learn/EarnPage";
 import CustomizationPage from "@/pages/learn/CustomizationPage";
@@ -23,6 +23,7 @@ import StudioCommunityPage from "@/pages/learn/StudioCommunityPage";
 import StudioQuickStartPage from "@/pages/learn/StudioQuickStartPage";
 import StudioFirstVideoPage from "@/pages/learn/StudioFirstVideoPage";
 import StudioBasicsDashboard from "@/pages/learn/StudioBasicsDashboard";
+import StudioBasicsContent from "@/pages/learn/StudioBasicsContentPage";
 
 // Reference Studio Pages
 import StudioReference from "@/pages/reference/StudioReference";
@@ -45,8 +46,8 @@ const App = () => (
           <Route path="/learn/studio/first-video" element={<StudioFirstVideoPage />} />
           <Route path="/learn/studio/dashboard" element={<StudioBasicsDashboard />} />
           <Route path="/learn/studio/dashboard/*" element={<StudioBasicsDashboard />} />
-          <Route path="/learn/studio/content" element={<ContentPage />} />
-          <Route path="/learn/studio/content/*" element={<ContentPage />} />
+          <Route path="/learn/studio/content" element={<StudioBasicsContent />} />
+          <Route path="/learn/studio/content/*" element={<StudioBasicsContent />} />
           <Route path="/learn/studio/analytics" element={<AnalyticsPage />} />
           <Route path="/learn/studio/community" element={<StudioCommunityPage />} />
           <Route path="/learn/studio/earn" element={<EarnPage />} />

@@ -1,4 +1,5 @@
 import { DocsLayout } from "@/components/docs/DocsLayout";
+import { ComingSoonBadge } from "@/components/common/ComingSoonBadge";
 import { studioLearnSidebar } from "@/config/sidebarConfig";
 import {
   DocsBreadcrumb,
@@ -25,17 +26,6 @@ const tocItems: TocItem[] = [
   { id: "evolving-fast", title: "Studio is evolving fast", level: 2 },
   { id: "next-steps", title: "Next steps", level: 2 },
 ];
-
-const ComingSoonBadge = ({ className = "" }: { className?: string }) => (
-  <span
-    className={[
-      "ml-2 inline-flex items-center rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold uppercase text-white shadow-[0_0_12px_rgba(16,185,129,0.6)]",
-      className,
-    ].join(" ")}
-  >
-    Coming Soon
-  </span>
-);
 
 const StudioOverview = () => {
   return (
