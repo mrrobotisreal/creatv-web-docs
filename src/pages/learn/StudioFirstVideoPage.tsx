@@ -1,5 +1,5 @@
 import { DocsLayout } from "@/components/docs/DocsLayout";
-import { ScreenshotPlaceholder } from "@/components/common/ScreenshotPlaceholder";
+import { ScreenshotZoomCard } from "@/components/common/ScreenshotZoomCard";
 import { studioLearnSidebar } from "@/config/sidebarConfig";
 import {
   DocsBreadcrumb,
@@ -89,7 +89,11 @@ const StudioFirstVideoPage = () => {
         </li>
       </DocsList>
 
-      <ScreenshotPlaceholder label='Dashboard → "Create" button → Create modal with "Upload Video" option' />
+      <ScreenshotZoomCard
+        title='Dashboard → "Create" button → Create modal with "Upload Video" option'
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo1.webp"
+        alt='Dashboard → "Create" button → Create modal with "Upload Video" option'
+      />
 
       <DocsHeading id="step-upload">Step 1: Upload</DocsHeading>
       <p className="mb-4">
@@ -103,7 +107,11 @@ const StudioFirstVideoPage = () => {
         </p>
       </DocsNote>
 
-      <ScreenshotPlaceholder label="Upload step (file picker + progress)" />
+      <ScreenshotZoomCard
+        title="Upload step (file picker + progress)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo2.webp"
+        alt="Upload step (file picker + progress)"
+      />
 
       <DocsHeading id="step-details">Step 2: Details</DocsHeading>
       <p className="mb-4">
@@ -131,7 +139,11 @@ const StudioFirstVideoPage = () => {
         </li>
       </DocsList>
 
-      <ScreenshotPlaceholder label="Details step (Title, Description, Thumbnail, Category, Audience)" />
+      <ScreenshotZoomCard
+        title="Details step (Title, Description, Thumbnail, Category, Audience)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo3.webp"
+        alt="Details step (Title, Description, Thumbnail, Category, Audience)"
+      />
 
       <DocsNote type="pitfall" title="Pitfall: “Next” won’t work until required fields are set">
         <p>
@@ -151,7 +163,11 @@ const StudioFirstVideoPage = () => {
         <li><strong>End screens</strong> — suggest another video, playlist, or call-to-action.</li>
       </DocsList>
 
-      <ScreenshotPlaceholder label="Video elements step (subtitles / end screen layouts)" />
+      <ScreenshotZoomCard
+        title="Video elements step (subtitles / end screen layouts)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo4.webp"
+        alt="Video elements step (subtitles / end screen layouts)"
+      />
 
       <DocsHeading id="step-checks">Step 4: Checks</DocsHeading>
       <p className="mb-4">
@@ -159,7 +175,11 @@ const StudioFirstVideoPage = () => {
         to address it before publishing.
       </p>
 
-      <ScreenshotPlaceholder label="Checks step (copyright check status)" />
+      <ScreenshotZoomCard
+        title="Checks step (copyright check status)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo5.webp"
+        alt="Checks step (copyright check status)"
+      />
 
       <DocsHeading id="step-visibility">Step 5: Visibility</DocsHeading>
       <p className="mb-4">
@@ -173,7 +193,11 @@ const StudioFirstVideoPage = () => {
         <li><strong>Schedule</strong> — pick a date/time to publish publicly later.</li>
       </DocsList>
 
-      <ScreenshotPlaceholder label="Visibility step (Private / Unlisted / Public + Schedule controls)" />
+      <ScreenshotZoomCard
+        title="Visibility step (Private / Unlisted / Public + Schedule controls)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_FirstVideo6.webp"
+        alt="Visibility step (Private / Unlisted / Public + Schedule controls)"
+      />
 
       <DocsNote title="Publishing checklist">
         <p>
