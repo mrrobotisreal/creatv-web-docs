@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { DocsLayout } from "@/components/docs/DocsLayout";
-import { ScreenshotPlaceholder } from "@/components/common/ScreenshotPlaceholder";
+import { ScreenshotZoomCard } from "@/components/common/ScreenshotZoomCard";
 import { studioLearnSidebar } from "@/config/sidebarConfig";
 import {
   DocsBreadcrumb,
@@ -39,16 +39,6 @@ const ComingSoonBadge = ({ className = "" }: { className?: string }) => (
   >
     Coming Soon
   </span>
-);
-
-const ScreenshotChecklistPlaceholder = ({ title, where, notes }: { title: string; where: string; notes?: string }) => (
-  <div className="my-6 rounded-xl border border-border bg-muted/20 p-4">
-    <div className="font-semibold mb-2">{title}</div>
-    <p className="text-sm text-muted-foreground mb-2">
-      <span className="font-medium text-foreground/80">Where:</span> {where}
-    </p>
-    {notes ? <p className="text-sm mb-0">{notes}</p> : null}
-  </div>
 );
 
 const StudioBasicsDashboard = () => {
@@ -118,7 +108,11 @@ const StudioBasicsDashboard = () => {
         </li>
       </DocsList>
 
-      <ScreenshotPlaceholder label="Dashboard overview (Create button + top metrics cards)" />
+      <ScreenshotZoomCard
+        title="Dashboard overview (Create button + top metrics cards)"
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Dashboard1.webp"
+        alt="Dashboard overview (Create button + top metrics cards)"
+      />
 
       <DocsHeading id="navigation">Navigation</DocsHeading>
       <p className="mb-4">
@@ -317,22 +311,22 @@ const StudioBasicsDashboard = () => {
         If you want this page to land instantly for creators, these screenshots do the heavy lifting:
       </p>
 
-      <ScreenshotChecklistPlaceholder
+      <ScreenshotZoomCard
         title="Screenshot 1: Dashboard overview (top of page)"
-        where='Studio → Dashboard (capture: page title, Create button, and the 4 stat cards)'
-        notes="This screenshot teaches the layout in 2 seconds."
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Dashboard2.webp"
+        alt="Screenshot 1: Dashboard overview (top of page)"
       />
 
-      <ScreenshotChecklistPlaceholder
+      <ScreenshotZoomCard
         title="Screenshot 2: Recent Activity list"
-        where='Studio → Dashboard → Recent Activity (capture 2–5 rows)'
-        notes='Bonus: include at least one video with views + duration so the “Uploaded · Visibility · Views · Duration” line is visible.'
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Dashboard3.webp"
+        alt="Screenshot 2: Recent Activity list"
       />
 
-      <ScreenshotChecklistPlaceholder
+      <ScreenshotZoomCard
         title="Screenshot 3: One-click actions"
-        where='Hover/capture the “View” (analytics) and “Watch” buttons on a Recent Activity row'
-        notes="This makes the Dashboard feel actionable instead of informational."
+        src="https://cdn.creatv.io/assets/creatv-docs-assets/CreaTVDocs_Dashboard4.webp"
+        alt="Screenshot 3: One-click actions"
       />
 
       <DocsHeading id="next-steps">Next steps</DocsHeading>
